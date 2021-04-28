@@ -11,6 +11,7 @@ import { Header } from "../components/Header";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import Head from "next/head";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -43,7 +44,11 @@ export default function Home() {
   const slides = [];
   for (let i = 0; i < continents.length; i += 1) {
     slides.push(
-      <SwiperSlide key={`slide-${continents[i]}`} tag="li" style={{ listStyle: "none" }}>
+      <SwiperSlide
+        key={`slide-${continents[i]}`}
+        tag="li"
+        style={{ listStyle: "none" }}
+      >
         <Link href={`/${continents[i]}`} align="center" justifyContent="center">
           <Image
             src={`/${continents[i]}.jpg`}
@@ -74,6 +79,9 @@ export default function Home() {
 
   return (
     <Flex direction="column" mb="12">
+      <Head>
+        <title>Home | World Trip</title>
+      </Head>
       <Header />
       <Flex direction="column" justify="center">
         <Flex

@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "europe",
+    "title": "Europa",
+    "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste",
+    "num_countries": 50,
+    "num_languages": 24,
+    "num_city_most_visited": 32,
+    "url_nation_img": "/europe.jpg",
+    "cities": [
+      {
+        "city": "Londres",
+        "country": "Reino Unido",
+        "country_code": "GB",
+        "img_url" : "/europa/londres.jpg"
+      },
+      {
+        "city": "Paris",
+        "country": "França",
+        "country_code": "FR",
+        "img_url" : "/europa/paris.jpg"
+      },
+      {
+        "city": "Roma",
+        "country": "Itália",
+        "country_code": "IT",
+        "img_url" : "/europa/roma.jpg"
+      },
+      {
+        "city": "Praga",
+        "country": "República Tcheca",
+        "country_code": "CZ",
+        "img_url" : "/europa/praga.jpg"
+      },
+      {
+        "city": "Amsterdã",
+        "country": "Holanda",
+        "country_code": "NL",
+        "img_url" : "/europa/amsterda.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "africa",
+    "title": "África",
+    "description": "A África é o terceiro continente mais extenso com cerca de 30 milhões de quilômetros quadrados, cobrindo 20,3% da área total da terra firme do planeta. É o segundo continente mais populoso da Terra com cerca de um bilhão de pessoas, representando cerca de um sétimo da população mundial, e 54 países independentes.",
+    "num_countries": 54,
+    "num_languages": 50,
+    "num_city_most_visited": 12,
+    "url_nation_img": "/africa.jpg",
+    "cities": [
+      {
+        "city": "Pietermaritzburg ",
+        "country": "África do Sul",
+        "country_code": "ZA",
+        "img_url" : "/africa/pietermaritzburg.jpg"
+      },
+      {
+        "city": "Gorongosa",
+        "country": "Moçambique",
+        "country_code": "MZ",
+        "img_url" : "/africa/gorongosa.jpg"
+      },
+      {
+        "city": "Harare",
+        "country": "Zimbabwe",
+        "country_code": "ZW",
+        "img_url" : "/africa/harare.jpg"
+      },
+      {
+        "city": "Rabat",
+        "country": "Marrocos",
+        "country_code": "MA",
+        "img_url" : "/africa/rabat.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "northAmerica",
+    "title": "América do Norte",
+    "description": "As opções de turismo na América do Norte atendem a todos os sonhos! No seu próximo roteiro, conheça a arquitetura e a diversidade de atrações de cidades cosmopolitas como Toronto, no Canadá, e Nova York, nos Estados Unidos. As principais capitais de todos os países da região também arrasam no quesito gastronomia e vida cultural, já que há a influência de ingleses e franceses no Canadá e dos maias no México.",
+    "num_countries": 4,
+    "num_languages": 6,
+    "num_city_most_visited": 10,
+    "url_nation_img": "/northAmerica.jpg",
+    "cities": [
+      {
+        "city": "Nova York",
+        "country": "Estados Unidos",
+        "country_code": "US",
+        "img_url" : "/northAmerica/novaYork.jpg"
+      },
+      {
+        "city": "Los Angeles",
+        "country": "Estados Unidos",
+        "country_code": "US",
+        "img_url" : "/northAmerica/losAngeles.jpg"
+      },
+      {
+        "city": "Toronto",
+        "country": "Canadá",
+        "country_code": "CA",
+        "img_url" : "/northAmerica/toronto.jpg"
+      },
+      {
+        "city": "Vancouver",
+        "country": "Canadá",
+        "country_code": "CA",
+        "img_url" : "/northAmerica/vancouver.jpg"
+      },
+      {
+        "city": "Cidade do Mexico",
+        "country": "Mexico",
+        "country_code": "MX",
+        "img_url" : "/northAmerica/cidadeDoMexico.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "southAmerica",
+    "title": "América do Sul",
+    "description": "A América do Sul possui muitos destinos turísticos que valem a pena conhecer em qualquer tipo de viagem, seja romântica, em família, com amigos. É também escolhida por muitos brasileiros que desejam fazer um mochilão e visitar vários países gastando pouco. Por conta da proximidade com o Brasil acaba sendo uma forma mais acessível de viajar e economizar. ",
+    "num_countries": 12,
+    "num_languages": 9,
+    "num_city_most_visited": 3,
+    "url_nation_img": "/southAmerica.jpg",
+    "cities": [
+      {
+        "city": "Florianopolis",
+        "country": "Brasil",
+        "country_code": "BR",
+        "img_url" : "/southAmerica/florianopolis.jpg"
+      },
+      {
+        "city": "Rio de Janeiro",
+        "country": "Brasil",
+        "country_code": "BR",
+        "img_url" : "/southAmerica/rioDeJaneiro.jpg"
+      },
+      {
+        "city": "Santiago",
+        "country": "Chile",
+        "country_code": "CL",
+        "img_url" : "/southAmerica/santiago.jpg"
+      },
+      {
+        "city": "Montevideo",
+        "country": "Uruguai",
+        "country_code": "UY",
+        "img_url" : "/southAmerica/montevideo.jpg"
+      },
+      {
+        "city": "Manaus",
+        "country": "Brasil",
+        "country_code": "BR",
+        "img_url" : "/southAmerica/manaus.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "oceania",
+    "title": "Oceania",
+    "description": "Cansou de apontar para os mesmos lugares no mapa ao procurar pelo próximo destino de férias? Então, que tal focar nas possibilidades de turismo na Oceania? O menor dos continentes é, também, um dos mais versáteis destinos a ser desbravado, de braços abertos tanto para quem não abre mão de uma boa estrutura e muito conforto para curtir sol e mar nas viagens, quanto para os exploradores mais ativos, que curtem mochila nas costas.",
+    "num_countries": 14,
+    "num_languages": 18,
+    "num_city_most_visited": 3,
+    "url_nation_img": "/oceania.jpg",
+    "cities": [
+      {
+        "city": "Camberra",
+        "country": "Austrália",
+        "country_code": "AU",
+        "img_url" : "/oceania/camberra.jpg"
+      },
+      {
+        "city": "Wellington",
+        "country": "Nova Zelândia",
+        "country_code": "NZ",
+        "img_url" : "/oceania/wellington.jpg"
+      },
+      {
+        "city": "Sidney",
+        "country": "Austrália",
+        "country_code": "AU",
+        "img_url" : "/oceania/sidney.jpg"
+      },
+      {
+        "city": "Auckland",
+        "country": "Nova Zelândia",
+        "country_code": "NZ",
+        "img_url" : "/oceania/auckland.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "asia",
+    "title": "Asia",
+    "description": "A Ásia é sinônimo de imensidão e diversidade. A região é enorme, apresentando destinos entre os mais incríveis de todo o mundo, com paisagens de tirar o fôlego, praias e mares de beleza ímpar, rica cultura, templos milenares, inabalável culto à religião, ilhas paradisíacas, gastronomia única e exótica.",
+    "num_countries": 50,
+    "num_languages": 38,
+    "num_city_most_visited": 43,
+    "url_nation_img": "/asia.jpg",
+    "cities": [
+      {
+        "city": "Tóquio",
+        "country": "Japão",
+        "country_code": "JP",
+        "img_url" : "/asia/toquio.jpg"
+      },
+      {
+        "city": "Bangkok",
+        "country": "Tailândia",
+        "country_code": "TH",
+        "img_url" : "/asia/bangkok.jpg"
+      },
+      {
+        "city": "Dubai",
+        "country": "Emirados Árabes Unidos",
+        "country_code": "AE",
+        "img_url" : "/asia/dubai.jpg"
+      },
+      {
+        "city": "Delhi",
+        "country": "India",
+        "country_code": "IN",
+        "img_url" : "/asia/delhi.jpg"
+      },
+      {
+        "city": "Singapura",
+        "country": "Singapura",
+        "country_code": "SG",
+        "img_url" : "/asia/singapura.jpg"
+      }
+    ]
+  }
+]
