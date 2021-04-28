@@ -2,9 +2,20 @@ import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import { Header } from "../components/Header";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.scss";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+
+SwiperCore.use([Navigation, Pagination]);
 
 export default function Home() {
+  const slides = [];
+  for (let i = 0; i < 5; i += 1) {
+    slides.push(
+      <SwiperSlide key={`slide-${i}`} tag="li">
+        <Image src="/europe.jpg" alt="europe" listStyleImage="none"></Image>
+      </SwiperSlide>
+    );
+  }
+
   return (
     <Flex direction="column" mb="20">
       <Header />
@@ -91,15 +102,16 @@ export default function Home() {
           Então escolha seu continente
         </Text>
         <Swiper
+          navigation
+          pagination
+          tag="section"
+          wrapperTag="ul"
           spaceBetween={50}
           slidesPerView={3}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          {slides}
         </Swiper>
       </Flex>
     </Flex>
