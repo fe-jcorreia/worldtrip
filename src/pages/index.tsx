@@ -1,23 +1,79 @@
-import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import { Header } from "../components/Header";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function Home() {
+  const continents = [
+    "europe",
+    "southAmerica",
+    "northAmerica",
+    "africa",
+    "asia",
+    "oceania",
+  ];
+  const headings = [
+    "Europa",
+    "América do Sul",
+    "América do Norte",
+    "África",
+    "Ásia",
+    "Oceania",
+  ];
+  const texts = [
+    "O continente mais antigo",
+    "Praias mais bonitas",
+    "Aventuras de tirar o fôlego",
+    "Natureza sem igual",
+    "Culturas milenares",
+    "Turistar a vontade",
+  ];
+
   const slides = [];
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < continents.length; i += 1) {
     slides.push(
-      <SwiperSlide key={`slide-${i}`} tag="li">
-        <Image src="/europe.jpg" alt="europe" listStyleImage="none"></Image>
+      <SwiperSlide key={`slide-${continents[i]}`} tag="li" style={{ listStyle: "none" }}>
+        <Link href={`/${continents[i]}`} align="center" justifyContent="center">
+          <Image
+            src={`/${continents[i]}.jpg`}
+            alt={`${continents[i]}`}
+            w="100%"
+            h="100%"
+            objectFit="cover"
+            filter="brightness(0.5)"
+          />
+          <Flex
+            position="absolute"
+            direction="column"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+          >
+            <Heading fontSize="5xl" fontWeight="600" color="gray.50">
+              {`${headings[i]}`}
+            </Heading>
+            <Text fontSize="2xl" fontWeight="600" color="gray.200">
+              {`${texts[i]}`}
+            </Text>
+          </Flex>
+        </Link>
       </SwiperSlide>
     );
   }
 
   return (
-    <Flex direction="column" mb="20">
+    <Flex direction="column" mb="12">
       <Header />
       <Flex direction="column" justify="center">
         <Flex
@@ -90,7 +146,7 @@ export default function Home() {
         <Text
           mx="auto"
           justify="center"
-          pt="20"
+          pt="3rem"
           fontSize="4xl"
           fontWeight="500"
           borderTop="3px solid"
@@ -98,18 +154,29 @@ export default function Home() {
         >
           Vamos nessa?
         </Text>
-        <Text mx="auto" justify="center" fontSize="4xl" fontWeight="500">
+        <Text
+          mx="auto"
+          mb="3rem"
+          justify="center"
+          fontSize="4xl"
+          fontWeight="500"
+        >
           Então escolha seu continente
         </Text>
         <Swiper
+          id="main"
           navigation
-          pagination
+          pagination={{ clickable: true }}
+          autoplay={{ disableOnInteraction: false, delay: 4000 }}
           tag="section"
           wrapperTag="ul"
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          spaceBetween={0}
+          slidesPerView={1}
+          onInit={(swiper) => console.log("Swiper inicializado ", swiper)}
+          onSlideChange={(swiper) => {
+            console.log("Slide index changed to: ", swiper.activeIndex);
+          }}
+          onReachEnd={() => console.log("Swiper end reached")}
         >
           {slides}
         </Swiper>
