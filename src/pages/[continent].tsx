@@ -17,8 +17,12 @@ interface ContinentProps {
   }[];
 }
 
-export default function Continent(props: ContinentProps) {
-  return <h1>asd</h1>;
+interface ContinentPageProps {
+  continent: ContinentProps;
+}
+
+export default function ContinentPage({ continent }: ContinentPageProps) {
+  return <h1>{continent.name}</h1>;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -41,9 +45,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     await fetch("http://localhost:3000/api/getCountries")
   ).json();
 
-  console.log(params);
+  const continent = req.filter((continent: ContinentProps) =>
+    continent.name === params?.continent ? continent : ""
+  )[0];
 
   return {
-    props: { req },
+    props: { continent },
   };
 };
