@@ -22,6 +22,7 @@ interface ContinentPageProps {
 }
 
 export default function ContinentPage({ continent }: ContinentPageProps) {
+  console.log(continent);
   return <h1>{continent.name}</h1>;
 }
 
@@ -33,6 +34,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = req.map((continent: ContinentProps) => ({
     params: { continent: continent.name },
   }));
+
+  console.log(paths);
 
   return {
     paths: paths,
@@ -49,7 +52,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     continent.name === params?.continent ? continent : ""
   )[0];
 
+  console.log(continent);
+  console.log(params);
+
   return {
     props: { continent },
+    revalidate: 60 * 30,
   };
 };
