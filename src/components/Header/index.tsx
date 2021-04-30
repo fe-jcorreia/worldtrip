@@ -9,29 +9,21 @@ export function Header() {
     <>
       {asPath !== "/" ? (
         <Flex
-          w="100vw"
-          maxW="full"
           h="100px"
-          px="32"
+          px="8%"
           align="center"
-          justify="start"
+          justify="center"
           bg="gray.100"
           boxShadow="base"
+          pos="relative"
         >
-          <Link href="/">
+          <Link href="/" position="absolute" left="8%">
             <Icon as={FiChevronLeft} fontSize="2rem" />
           </Link>
-          <Image
-            src="/logo.svg"
-            position="absolute"
-            left="50%"
-            transform="translateX(-50%)"
-          />
+          <Image src="/logo.svg" alt="logo" />
         </Flex>
       ) : (
         <Flex
-          w="100vw"
-          maxW="full"
           h="100px"
           px="6"
           align="center"
@@ -39,7 +31,7 @@ export function Header() {
           bg="gray.100"
           boxShadow="base"
         >
-          <Image src="/logo.svg" />
+          <Image src="/logo.svg" alt='logo' />
         </Flex>
       )}
     </>

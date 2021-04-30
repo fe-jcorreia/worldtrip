@@ -171,23 +171,25 @@ export default function Home() {
         >
           Então escolha seu continente
         </Text>
-        <Swiper
-          id="main"
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ disableOnInteraction: false, delay: 4000 }}
-          tag="section"
-          wrapperTag="ul"
-          spaceBetween={0}
-          slidesPerView={1}
-          onInit={(swiper) => console.log("Swiper inicializado ", swiper)}
-          onSlideChange={(swiper) => {
-            console.log("Slide index changed to: ", swiper.activeIndex);
-          }}
-          onReachEnd={() => console.log("Swiper end reached")}
+        <Flex
+          maxWidth={1240}
+          height={450}
+          mb="20"
+          mx="auto"
         >
-          {slides}
-        </Swiper>
+          <Swiper
+            id="main"
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ disableOnInteraction: false, delay: 4000 }}
+            tag="section"
+            wrapperTag="ul"
+            spaceBetween={0}
+            slidesPerView={1}
+          >
+            {slides}
+          </Swiper>
+        </Flex>
       </Flex>
     </Flex>
   );

@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { Header } from "../components/Header";
 import ReactCountryFlag from "react-country-flag";
+import { CountryBanner } from "../components/CountryBanner";
 
 interface ContinentProps {
   id: number;
@@ -29,117 +30,145 @@ export default function ContinentPage({ continent }: ContinentPageProps) {
   return (
     <Flex direction="column" mb="12">
       <Head>
-        <title>page | World Trip</title>
+        <title>{continent?.title} | World Trip</title>
       </Head>
       <Header />
-      <Flex h="500px" pos="relative">
-        <Image
-          src={continent?.url_nation_img}
-          alt={`${continent?.name}`}
-          objectFit="cover"
-          filter="brightness(0.5)"
-        />
-        <Text
-          as="header"
-          position="absolute"
-          left="32"
-          bottom="4rem"
-          fontSize="5xl"
-          fontWeight="600"
-          color="gray.50"
+      <CountryBanner
+        name={continent?.name}
+        title={continent.title}
+        url_nation_img={continent?.url_nation_img}
+      />
+      <Flex
+        flexDir="column"
+        mx="auto"
+        maxW={["720px", "720px", "820px", "960px", "1080px", "1250px"]}
+      >
+        <Flex
+          flexDir={["column", "column", "column", "row"]}
+          my="4rem"
+          align="center"
+          justify="space-between"
         >
-          {continent?.title}
-        </Text>
-      </Flex>
-      <Flex mx="32" my="4rem" align="center" justify="space-between">
-        <Text fontSize="xl" w="600px" textAlign="justify">
-          {continent?.description}
-        </Text>
-        <Flex align="center" justify="space-between">
-          <Box w="8.5rem" fontWeight="600" fontSize="xl" textAlign="center">
-            <Text color="orange.800" fontSize="5xl">
-              {continent?.num_countries}
-            </Text>
-            países
-          </Box>
-          <Box w="8.5rem" fontWeight="600" fontSize="xl" textAlign="center">
-            <Text color="orange.800" fontSize="5xl">
-              {continent?.num_languages}
-            </Text>
-            línguas
-          </Box>
-          <Box w="8.5rem" fontWeight="600" fontSize="xl" textAlign="center">
-            <Text color="orange.800" fontSize="5xl">
-              {continent?.num_city_most_visited}
-            </Text>
-            cidades +100
-          </Box>
+          <Text
+            w={["80%", "80%", "80%", "45%"]}
+            fontSize={["lg", "xl"]}
+            textAlign="justify"
+          >
+            {continent?.description}
+          </Text>
+          <Flex
+            w={["80%", "80%", "80%", "45%"]}
+            mt={["2rem", "2rem", "2rem", "0"]}
+            align="center"
+            justify="space-between"
+          >
+            <Box
+              w="33%"
+              fontWeight="600"
+              fontSize={["lg", "xl"]}
+              textAlign="center"
+            >
+              <Text color="orange.800" fontSize={["3xl", "5xl"]}>
+                {continent?.num_countries}
+              </Text>
+              países
+            </Box>
+            <Box
+              w="33%"
+              fontWeight="600"
+              fontSize={["lg", "xl"]}
+              textAlign="center"
+            >
+              <Text color="orange.800" fontSize={["3xl", "5xl"]}>
+                {continent?.num_languages}
+              </Text>
+              línguas
+            </Box>
+            <Box
+              w="33%"
+              fontWeight="600"
+              fontSize={["lg", "xl"]}
+              textAlign="center"
+            >
+              <Text color="orange.800" fontSize={["3xl", "5xl"]}>
+                {continent?.num_city_most_visited}
+              </Text>
+              cidades +100
+            </Box>
+          </Flex>
         </Flex>
-      </Flex>
-      <Box mx="32">
-        <Heading fontWeight="500" fontSize="4xl">
-          Cidades +100
-        </Heading>
-        <SimpleGrid flex="1" gap="20" columns={4} align="flex-start" mt="3rem">
-          {continent?.cities.map((cityElement) => {
-            return (
-              <Box
-                h="280px"
-                w="256px"
-                bg="white"
-                key={cityElement.country_code}
-              >
-                <Image
-                  src={cityElement?.img_url}
-                  alt={cityElement?.country}
-                  w="100%"
-                  h="62%"
-                  borderRadius="5px 5px 0 0"
-                  objectFit="cover"
-                />
+        <Box mx="auto" w={["90%", "80%", "80%", "100%"]}>
+          <Heading fontWeight="500" fontSize={["3xl", "4xl"]}>
+            Cidades +100
+          </Heading>
+          <SimpleGrid
+            gap={["10", "12", "16", "20"]}
+            columns={[1, 1, 2, 3, 4]}
+            align="flex-start"
+            mt="3rem"
+          >
+            {continent?.cities.map((cityElement) => {
+              return (
                 <Box
-                  borderWidth="0 1px 1px 1px"
-                  borderRadius="0 0 5px 5px"
-                  borderColor="rgba(255, 186, 8, 0.5)"
-                  h="38%"
+                  h="280px"
+                  w="256px"
+                  mx="auto"
+                  borderRadius="5px"
+                  bg="white"
+                  key={cityElement.country_code}
                 >
-                  <Flex
-                    align="center"
-                    justify="space-between"
-                    mx="1rem"
-                    pt="1.5rem"
+                  <Image
+                    src={cityElement?.img_url}
+                    alt={cityElement?.country}
+                    w="100%"
+                    h="62%"
+                    borderRadius="5px 5px 0 0"
+                    objectFit="cover"
+                  />
+                  <Box
+                    borderWidth="0 1px 1px 1px"
+                    borderRadius="0 0 5px 5px"
+                    borderColor="rgba(255, 186, 8, 0.5)"
+                    h="38%"
                   >
-                    <Text fontWeight="600" fontSize="lg">
-                      {cityElement?.city}
-                    </Text>
-                    <ReactCountryFlag
-                      countryCode={cityElement?.country_code}
-                      svg
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "50%",
-                        border: "1px solid #DADADA",
-                      }}
-                      title={cityElement?.country_code}
-                    />
-                  </Flex>
+                    <Flex
+                      align="center"
+                      justify="space-between"
+                      mx="1rem"
+                      pt="1.5rem"
+                    >
+                      <Text fontWeight="600" fontSize="lg">
+                        {cityElement?.city}
+                      </Text>
+                      <ReactCountryFlag
+                        countryCode={cityElement?.country_code}
+                        svg
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                          border: "1px solid #DADADA",
+                        }}
+                        title={cityElement?.country_code}
+                      />
+                    </Flex>
 
-                  <Text
-                    fontSize="md"
-                    color="gray.400"
-                    mt="0.5rem"
-                    mx="1rem"
-                    pb="1.5rem"
-                  >
-                    {cityElement?.country}
-                  </Text>
+                    <Text
+                      fontSize="md"
+                      color="gray.400"
+                      mt="0.5rem"
+                      mx="1rem"
+                      pb="1.5rem"
+                    >
+                      {cityElement?.country}
+                    </Text>
+                  </Box>
                 </Box>
-              </Box>
-            );
-          })}
-        </SimpleGrid>
-      </Box>
+              );
+            })}
+          </SimpleGrid>
+        </Box>
+      </Flex>
     </Flex>
   );
 }
