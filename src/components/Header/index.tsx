@@ -31,7 +31,7 @@ export function Header() {
           bg="gray.100"
           boxShadow="base"
         >
-          <Image src="/logo.svg" alt='logo' />
+          <Image src="/logo.svg" alt="logo" />
         </Flex>
       )}
     </>

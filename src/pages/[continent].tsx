@@ -35,7 +35,7 @@ export default function ContinentPage({ continent }: ContinentPageProps) {
       <Header />
       <CountryBanner
         name={continent?.name}
-        title={continent.title}
+        title={continent?.title}
         url_nation_img={continent?.url_nation_img}
       />
       <Flex

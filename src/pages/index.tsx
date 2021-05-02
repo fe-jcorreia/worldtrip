@@ -12,6 +12,8 @@ import { Header } from "../components/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import Head from "next/head";
+import { Categories } from "../components/Categories";
+import { MainBanner } from "../components/MainBanner";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -65,10 +67,10 @@ export default function Home() {
             left="50%"
             transform="translate(-50%, -50%)"
           >
-            <Heading fontSize="5xl" fontWeight="600" color="gray.50">
+            <Heading fontSize={["4xl", "5xl"]} fontWeight="600" color="gray.50">
               {`${headings[i]}`}
             </Heading>
-            <Text fontSize="2xl" fontWeight="600" color="gray.200">
+            <Text fontSize={["xl", "2xl"]} fontWeight="600" color="gray.200">
               {`${texts[i]}`}
             </Text>
           </Flex>
@@ -84,78 +86,16 @@ export default function Home() {
       </Head>
       <Header />
       <Flex direction="column" justify="center">
-        <Flex
-          bgImage="url('/background.svg')"
-          bgSize="cover"
-          w="100%"
-          h="335px"
-          px="32"
-          align="center"
-          justify="space-between"
-        >
-          <Box direction="column">
-            <Text fontSize="4xl" color="white" mb="4">
-              5 Continentes, <br /> infinitas possibilidades
-            </Text>
-            <Text fontSize="xl" color="gray.400">
-              Chegou a hora de tirar do papel a viagem que você <br /> sempre
-              sonhou.
-            </Text>
-          </Box>
-          <Box>
-            <Image
-              boxSize="lg"
-              src="/icons/airplane.svg"
-              transform="rotate(3deg)"
-              mt="24"
-            />
-          </Box>
-        </Flex>
-        <HStack
-          px="32"
-          py="28"
-          alignItems="center"
-          justify="space-between"
-          color="gray.600"
-          fontWeight="600"
-          fontSize="2xl"
-        >
-          <Box w="48">
-            <Image mx="auto" src="/icons/cocktail.svg" />
-            <Text mt="6" textAlign="center">
-              vida noturna
-            </Text>
-          </Box>
-          <Box w="48">
-            <Image mx="auto" src="/icons/surf.svg" />
-            <Text mt="6" textAlign="center">
-              praia
-            </Text>
-          </Box>
-          <Box w="48">
-            <Image mx="auto" src="/icons/building.svg" />
-            <Text mt="6" textAlign="center">
-              moderno
-            </Text>
-          </Box>
-          <Box w="48">
-            <Image mx="auto" src="/icons/museum.svg" />
-            <Text mt="6" textAlign="center">
-              clássico
-            </Text>
-          </Box>
-          <Box w="48">
-            <Image mx="auto" src="/icons/earth.svg" />
-            <Text mt="6" textAlign="center">
-              e mais...
-            </Text>
-          </Box>
-        </HStack>
+        <MainBanner />
+
+        <Categories />
+
         <Text
           mx="auto"
           justify="center"
+          textAlign="center"
           pt="3rem"
-          fontSize="4xl"
+          fontSize={["2xl", "4xl"]}
           fontWeight="500"
           borderTop="3px solid"
           borderColor="gray.600"
@@ -164,17 +104,18 @@ export default function Home() {
         </Text>
         <Text
           mx="auto"
+          px="6"
           mb="3rem"
+          textAlign="center"
           justify="center"
-          fontSize="4xl"
+          fontSize={["2xl", "4xl"]}
           fontWeight="500"
         >
           Então escolha seu continente
         </Text>
         <Flex
-          maxWidth={1240}
+          maxWidth={["full", "full", "full", "full", "1250px"]}
           height={450}
-          mb="20"
           mx="auto"
         >
           <Swiper
